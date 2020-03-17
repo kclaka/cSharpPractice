@@ -36,8 +36,10 @@ namespace tutorial101
             Console.WriteLine(Panda.Population);
 
             Mtest();
+            ArrayTest();
             Console.WriteLine(FeetToInches(23));
             Console.WriteLine("Hello World!");
+            
         }
 
         static void Mtest()
@@ -58,12 +60,51 @@ namespace tutorial101
             {
                 Console.WriteLine("Print Me");
             }
+
+            string name = "Kenny";
+            Console.WriteLine($"My name is {name}");
         }
 
         static int FeetToInches(int feet)
         {
             int inches = feet * 12;
             return inches;
+        }
+
+        static void ArrayTest()
+        {
+            char[] vowels = new char[5];
+            vowels[0] = 'a';
+            vowels[1] = 'e';
+            vowels[2] = 'i';
+            vowels[3] = 'o';
+            vowels[4] = 'u';
+
+            //Console.WriteLine(vowels[1]);
+
+            for(int i = 0; i < vowels.Length; i++)
+            {
+                Console.Out.Write(vowels[i] + ",");
+            }
+
+            int[,] matrix = new int[3, 3];
+
+            for(int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for(int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = i * 3 + j;
+                }
+            }
+
+            for(int k = 0; k < matrix.GetLength(0); k++)
+            {
+               for(int l = 0; l < matrix.GetLength(1); l++)
+                {
+                    Console.WriteLine(matrix[k, l]);
+                }
+            }
+            
         }
     }
 }
