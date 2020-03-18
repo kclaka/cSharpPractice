@@ -37,8 +37,13 @@ namespace tutorial101
 
             Mtest();
             ArrayTest();
+            Console.WriteLine(Factorial(5));
             Console.WriteLine(FeetToInches(23));
             Console.WriteLine("Hello World!");
+            Console.WriteLine(default(decimal));
+            int p1 = 10;
+            Foo(p1);
+            Console.WriteLine(p1);
             
         }
 
@@ -104,7 +109,25 @@ namespace tutorial101
                     Console.WriteLine(matrix[k, l]);
                 }
             }
+
+            
             
         }
+
+        static int Factorial(int x)
+        {
+            if (x == 0)
+                return 1;
+
+            return x * Factorial(x - 1);
+        }
+
+        static void Foo(int p)
+        {
+            p = p + 1;
+            Console.WriteLine(p);
+        }
     }
+
+
 }
